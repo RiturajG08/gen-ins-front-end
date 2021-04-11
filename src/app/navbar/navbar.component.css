@@ -18,3 +18,7 @@
     background-color: #ddd;
     color: black;
   }
+
+  .topnav a.login{
+    float: right;
+  }
