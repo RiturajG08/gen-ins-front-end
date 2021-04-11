@@ -1,0 +1,22 @@
+.header {
+    padding: 30px;
+    text-align: center;
+    background: white;
+  }
+  
+  .header h1 {
+    font-size: 50px;
+  }
+
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+  }
+  
