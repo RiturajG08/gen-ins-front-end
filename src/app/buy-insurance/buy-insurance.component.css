@@ -37,17 +37,10 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  input[type=submit]:hover {
+  .sub{
     background-color: darkmagenta;
   }
   
-  .icon {
-    padding: 10px;
-    background: dodgerblue;
-    color: white;
-    min-width: 50px;
-    text-align: center;
-  }
   
   
   
