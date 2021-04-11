@@ -1,8 +1,9 @@
 <div class="center-div">
     <form  class="frm">
-        <input type="number" placeholder="Enter Policy Number" /><br/>
-        <input type="date" placeholder="Enter Claim Date" /><br/>
-        <select name="Claim Reason">
+        <input type="number" placeholder="Enter Policy Number" required/><br/>
+        <label>Date of Loss:</label>
+        <input type="date" placeholder="Enter Date of Loss" /><br/>
+        <select name="Claim Reason" id="selection" required>
             <option value="nd">Natural Disaster </option>
             <option value="mmd">Man-Made Disaster </option>
             <option value="rd">Road Accident </option>
