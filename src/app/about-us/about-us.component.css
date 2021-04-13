@@ -1,14 +1,14 @@
 .border {
-    border: 1px solid black;
-    background-color: #f8f0ef;
-     color: black;
-     padding: 10px;
-   }
- 
-   .main{
-     background-color: black;
-   }
- 
-   .padding{
-       padding: 0px 0px 0px 70px;
-   }
+  border: 1px solid mediumpurple;
+  background-color: mediumpurple;
+   color: white;
+   padding: 10px;
+ }
+
+ .main{
+   background-color: lightskyblue;
+ }
+
+ .padding{
+     padding: 0px 0px 0px 70px;
+ }
