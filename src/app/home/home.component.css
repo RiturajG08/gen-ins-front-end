@@ -4,7 +4,7 @@
 
   .racorner {
     border-radius: 25px;
-    background-color: #95170e;
+    background-color: violet;
     color: white;
     font-size: 19px;
     border: 2px solid;
@@ -46,9 +46,10 @@
   }
 
   .image-text {  
-       color:rgb(12, 12, 12);
+    float: left;
+    color: rgb(12, 12, 12);
     position: absolute;
-    top: 50%;
+    top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
