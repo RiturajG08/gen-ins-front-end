@@ -15,6 +15,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { HelpComponent } from './help/help.component';
 import { FaqComponent } from './faq/faq.component';
 import { CustomerRegisterComponent } from './customer-register/customer-register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { CustomerRegisterComponent } from './customer-register/customer-register
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule
   ],
