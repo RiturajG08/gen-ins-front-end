@@ -9,22 +9,45 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   constructor(private router: Router) { }
 
-  loggedUserId:String = null;
+  loggedInUserId:String = null;
+  loggedInUserName:String = null;
 
   ngOnInit(): void {
-    this.loggedUserId = sessionStorage.getItem("customerId");
-  }
+    this.loggedInUserId = sessionStorage.getItem("customerId");
+    this.loggedInUserName = sessionStorage.getItem("customerName");
+  } 
 
   onBuyClick(){
-    this.router.navigateByUrl("/buy-insurance");
+
+    if(this.loggedInUserId == null){
+      this.router.navigateByUrl("/login");
+    }
+    else{
+      this.router.navigateByUrl('/buy-insurance');
+    }
+    
   }
 
   onRenewClick(){
-    this.router.navigateByUrl("/renew-insurance");
+
+    if(this.loggedInUserId == null){
+      this.router.navigateByUrl("/login");
+    }
+    else{
+      this.router.navigateByUrl('/renew-insurance');
+    }
+    
   }
 
   onClaimClick(){
-      this.router.navigateByUrl("/claim-insurance");
+
+    if(this.loggedInUserId == null){
+      this.router.navigateByUrl("/login");
+    }
+    else{
+      this.router.navigateByUrl('/claim-insurance');
+    }
+    
     }
 
   /*onCalculateClick(){
