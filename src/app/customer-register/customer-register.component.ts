@@ -17,6 +17,7 @@ export class CustomerRegisterComponent implements OnInit {
   registerCustomer(){
     this.service.register(this.customer).subscribe(data =>{
       alert(JSON.stringify(data));
+      this.router.navigateByUrl("/login");
     })
   }
 
