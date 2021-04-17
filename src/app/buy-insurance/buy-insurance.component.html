@@ -1,21 +1,21 @@
 <!--<p>buy-insurance works!</p>-->
 <!--<p>buy works!</p>-->
 <div class="center-div">
-    <form class="frm">
+    <form class="frm" (ngSubmit)="registerVehicle()">
     <label>Choose a Vehicle:</label>
-    <select name="cars type" id="selection" required>
-    <option value="2w">2 Wheeler</option>
-    <option value="4w">4 Wheeler</option>
+    <select name="cars type" id="selection" required [(ngModel)]= vehicle.type>
+    <option value="2 Wheeler">2 Wheeler</option>
+    <option value="4 Wheeler">4 Wheeler</option>
     </select>
-      <input type="text" placeholder="Enter Vehicle Numbers" required /><br/>
-      <input type="number" placeholder="Enter Vehicle Price" required /><br/>
+      <input type="text"  name ="number" placeholder="Enter Vehicle Numbers" required  [(ngModel)]= vehicle.number/><br/>
+      <input type="number" name = "price" placeholder="Enter Vehicle Price" required [(ngModel)]= vehicle.price/><br/>
       <label>Enter Registration Date:</label>
-      <input type="date" placeholder="Enter Vehicle Registration date" required /><br/>
-      <input type="text" placeholder="Enter Vehicle Engine No." required/><br/>
-      <input type="text" placeholder="Enter Vehicle Driving License" required /><br/>
-      <input type="text" placeholder="Enter Vehicle Chassis Number" required /><br/>
-      <input type="text" placeholder="Enter Vehicle Model" required /><br/>
-      <input type="text" placeholder="Enter Vehicle Manufacturer" required /><br/>
+      <input type="date"  name = "registrationDate" placeholder="Enter Vehicle Registration date" required [(ngModel)]= vehicle.registrationDate /><br/>
+      <input type="text"  name ="engineNumber" placeholder="Enter Vehicle Engine No." required [(ngModel)]= vehicle.engineNumber /><br/>
+      <input type="text" name = " drivingLicense" placeholder="Enter Vehicle Driving License" required [(ngModel)]=vehicle.drivingLicense /><br/>
+      <input type="text" name ="chassisNumber " placeholder="Enter Vehicle Chassis Number" required [(ngModel)]=vehicle.chassisNumber /><br/>
+      <input type="text" name = " model" placeholder="Enter Vehicle Model" required [(ngModel)]=vehicle.model /><br/>
+      <input type="text" name =" manufacturer" placeholder="Enter Vehicle Manufacturer" required  [(ngModel)]=vehicle.manufacturer/><br/>
       <button type="submit" class="btn btn-success">Submit</button>
   </form>
   </div>
