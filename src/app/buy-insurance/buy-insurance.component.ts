@@ -34,5 +34,4 @@ export class Vehicle{
  model: String;
  manufacturer: String;
 
-
 }
