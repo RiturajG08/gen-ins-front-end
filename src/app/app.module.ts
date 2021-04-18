@@ -16,6 +16,7 @@ import { HelpComponent } from './help/help.component';
 import { FaqComponent } from './faq/faq.component';
 import { CustomerRegisterComponent } from './customer-register/customer-register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     AboutUsComponent,
     HelpComponent,
     FaqComponent,
-    CustomerRegisterComponent
+    CustomerRegisterComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
