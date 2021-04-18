@@ -21,6 +21,10 @@ export class BuyInsuranceComponent implements OnInit {
     })
   }
 
+  vehicleS(vehicle){
+    vehicle.customerId= sessionStorage.getItem('customerId');
+    return vehicle;
+  }
 }
 
 export class Vehicle{
@@ -33,6 +37,5 @@ export class Vehicle{
  chassisNumber: String;
  model: String;
  manufacturer: String;
-
-
+ customerId: number;
 }
