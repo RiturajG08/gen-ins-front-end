@@ -24,6 +24,7 @@ export class BuyInsuranceComponent implements OnInit {
   vehicleS(vehicle){
     vehicle.customerId= sessionStorage.getItem('customerId');
     return vehicle;
+    
   }
 }
 
