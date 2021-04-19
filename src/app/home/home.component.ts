@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
     
     }
 
-  /*onCalculateClick(){
-    this.router.navigateByUrl("/calculate-premium");
-  }*/
+  onCalculateClick(){
+    this.router.navigateByUrl('/estimate-insurance');
+  }
 }
