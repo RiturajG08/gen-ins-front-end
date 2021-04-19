@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PolicyComponent implements OnInit {
 
+  policy: Policy= new Policy();
   constructor() { }
 
   ngOnInit(): void {
   }
+}
+
+export class Policy{
+  type: String;
+  startDate: String;
 }
