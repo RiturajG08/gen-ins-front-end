@@ -11,6 +11,7 @@ import { VehicleService } from '../vehicle.service';
 export class BuyInsuranceComponent implements OnInit {
 
   vehicle:  Vehicle= new Vehicle();
+  vehicleId: string;
   constructor(private service: VehicleService, private router: Router) { }
 
   ngOnInit(): void {
@@ -20,10 +21,9 @@ export class BuyInsuranceComponent implements OnInit {
     this.vehicle.customer.id= parseInt(sessionStorage.getItem('customerId'));
     this.service.register(this.vehicle).subscribe(data =>{
       alert(JSON.stringify(data));
+      this.vehicleId= data['registerVihicleId'];
+      sessionStorage.setItem('vehicleId', this.vehicleId);
     })
-    let vehicleId = this.registerVihicleId;
-    sessionStorage.setItem('vehicleId', String(vehicleId));
-    this.router.navigateByUrl("/policy");
   }
 }
 
