@@ -51,6 +51,13 @@ export class HomeComponent implements OnInit {
     }
 
   onCalculateClick(){
-    this.router.navigateByUrl('/estimate-insurance');
+    if(this.loggedInUserId == null){
+      this.router.navigateByUrl("/login");
+    }
+    else{
+      this.router.navigateByUrl('/estimate-insurance');
+
+    }
+    
   }
 }
