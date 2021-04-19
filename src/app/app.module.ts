@@ -17,6 +17,7 @@ import { FaqComponent } from './faq/faq.component';
 import { CustomerRegisterComponent } from './customer-register/customer-register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { PolicyComponent } from './policy/policy.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     HelpComponent,
     FaqComponent,
     CustomerRegisterComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    PolicyComponent
   ],
   imports: [
     BrowserModule,

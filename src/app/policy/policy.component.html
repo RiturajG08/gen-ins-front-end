@@ -1,0 +1,16 @@
+<div class="center-div">
+    <form class="frm" (ngSubmit)="addPolicy()">
+    <label>Choose Policy Type:</label>
+    <select name="policy type" id="selection" required [(ngModel)]= policy.type>
+    <option value="comprehensive">Comprehensive</option>
+    <option value="third Party">Third Party</option>
+    </select>
+    <label>Choose Your Plan:</label>
+    <select name="plan type" id="selection" required [(ngModel)]= plan.type>
+    <option value="one year">One Year</option>
+    <option value="two year">Two Year</option>
+    <option value="three year">Three Year</option>
+    </select>
+     <button type="submit" class="btn btn-success">Make Payment</button>
+  </form>
+  </div>
