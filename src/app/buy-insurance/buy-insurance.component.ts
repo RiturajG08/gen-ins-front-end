@@ -21,6 +21,8 @@ export class BuyInsuranceComponent implements OnInit {
     this.service.register(this.vehicle).subscribe(data =>{
       alert(JSON.stringify(data));
     })
+    let vehicleId = this.registerVihicleId;
+    sessionStorage.setItem('vehicleId', String(vehicleId));
     this.router.navigateByUrl("/policy");
   }
 }
