@@ -24,6 +24,7 @@ export class CustomerRegisterComponent implements OnInit {
 }
 
 export class Customer{
+  id: number;
   name: String;
   email: String;
   password: String;

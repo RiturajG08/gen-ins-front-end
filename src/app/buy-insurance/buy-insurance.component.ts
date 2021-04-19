@@ -17,7 +17,7 @@ export class BuyInsuranceComponent implements OnInit {
   }
 
   registerVehicle(){
-    this.vehicle.customerId= parseInt(sessionStorage.getItem('customerId'));
+    this.vehicle.customer.id= parseInt(sessionStorage.getItem('customerId'));
     this.service.register(this.vehicle).subscribe(data =>{
       alert(JSON.stringify(data));
     })
@@ -25,6 +25,7 @@ export class BuyInsuranceComponent implements OnInit {
 }
 
 export class Vehicle{
+ id:number;
  type: String;
  number: String;
  price: number;
@@ -34,5 +35,5 @@ export class Vehicle{
  chassisNumber: String;
  model: String;
  manufacturer: String;
- customerId: number;
+ customer: Customer= new Customer();
 }
