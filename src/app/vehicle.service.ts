@@ -11,7 +11,7 @@ export class VehicleService {
   constructor(private http: HttpClient) { }
 
   register(vehicle: Vehicle): Observable<object>{
-    let url= "http://localhost:8484/vehicle";
+    let url= "http://localhost:8383/calculater";
     return this.http.post(url, vehicle);
   }  
 

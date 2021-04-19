@@ -18,6 +18,7 @@ import { CustomerRegisterComponent } from './customer-register/customer-register
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PolicyComponent } from './policy/policy.component';
+import { EstimateInsuranceComponent } from './estimate-insurance/estimate-insurance.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PolicyComponent } from './policy/policy.component';
     FaqComponent,
     CustomerRegisterComponent,
     WelcomeComponent,
-    PolicyComponent
+    PolicyComponent,
+    EstimateInsuranceComponent
   ],
   imports: [
     BrowserModule,

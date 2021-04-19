@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+.center-div {
+    margin: auto;
+    width: 60%;
+    border: 3px solid blueviolet;
+    padding: 10px;
+    border-style: inset;
+  }
+  
+  .frm{
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+   
+  }
+  
+  input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  
+  }
+  .sub{
+    background-color: darkmagenta;
+  }
+
+  #selection{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }

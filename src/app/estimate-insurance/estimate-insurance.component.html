@@ -1,0 +1,14 @@
+<div class="center-div">
+    <form class="frm">
+    <label>Choose a Vehicle:</label>
+    <select name="cars type" id="selection" required >
+    <option value="2 Wheeler">2 Wheeler</option>
+    <option value="4 Wheeler">4 Wheeler</option>
+    </select>
+      <input type="text" name = " model" placeholder="Enter Vehicle Model" required [(ngModel)]=vmodel /><br/>
+      <input type="number" name = "price" placeholder="Enter Vehicle Price" required [(ngModel)]=price/><br/>
+      <input type="number" name = "age" placeholder="Enter Vehicle Age" required [(ngModel)]= age/><br/>
+      <button type="submit" class="btn btn-success" (click)="getpremium()">Submit</button>
+      <div> your vehicle {{vmodel}} has cantain idv value {{idv}} and premium value {{premium}}</div>
+  </form>
+  </div>
