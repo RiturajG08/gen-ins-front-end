@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { Customer } from '../customer-register/customer-register.component';
 import { VehicleService } from '../vehicle.service';
 
 @Component({
@@ -16,14 +17,10 @@ export class BuyInsuranceComponent implements OnInit {
   }
 
   registerVehicle(){
+    this.vehicle.customerId= parseInt(sessionStorage.getItem('customerId'));
     this.service.register(this.vehicle).subscribe(data =>{
       alert(JSON.stringify(data));
     })
-  }
-
-  vehicleDto(vehicle){
-    vehicle.customerId= sessionStorage.getItem('customerId');
-    return vehicle;
   }
 }
 
