@@ -21,6 +21,7 @@ export class BuyInsuranceComponent implements OnInit {
     this.service.register(this.vehicle).subscribe(data =>{
       alert(JSON.stringify(data));
     })
+    this.router.navigateByUrl("/policy");
   }
 }
 

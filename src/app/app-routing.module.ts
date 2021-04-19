@@ -9,6 +9,7 @@ import {​​​​​ FaqComponent }​​​​​ from'./faq/faq.component';
 import {​​​​​ HelpComponent }​​​​​ from'./help/help.component';
 import {​​​​​ HomeComponent }​​​​​ from'./home/home.component';
 import {​​​​​ LoginComponent }​​​​​ from'./login/login.component';
+import { PolicyComponent } from './policy/policy.component';
 import {​​​​​ RenewInsuranceComponent }​​​​​ from'./renew-insurance/renew-insurance.component';
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   {​​​​​path:'help', component:HelpComponent}​​​​​,
   {​​​​​path:'contact-us', component:ContactUsComponent}​​​​​,
   {​​​​​path:'faq', component:FaqComponent}​​​​​,
-  {​​​​​path:'customer-register', component:CustomerRegisterComponent}​​​​​
+  {​​​​​path:'customer-register', component:CustomerRegisterComponent},​​​​​
+  {path:'policy', component:PolicyComponent}
 
 ];
 
