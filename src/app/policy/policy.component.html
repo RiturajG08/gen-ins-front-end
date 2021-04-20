@@ -4,6 +4,9 @@
     <option value="3rd Party">Third Party</option>
     <option value="comp">Comprehensive</option>
     </select>
+
+    <label>Start Date Of Policy:</label>
+    <input type="date"  name = "policyRegistrationDate" placeholder="Enter Vehicle  Policy Registration date" required [(ngModel)]= policy.startDate /><br/>
     <label>Choose a Policy Year:</label>
     <select name="period" id="selection" required [(ngModel)]= policy.period>
     <option value="One Year">One Year</option>

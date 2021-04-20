@@ -19,9 +19,11 @@ export class PolicyComponent implements OnInit {
   }
 
   addPolicy(){
-    if(this.policy.period == "One Year"){
-      this.policy.startDate
-    }
+   this.policy.customer.id=parseInt(sessionStorage.getItem('customerId'));
+   this.policy.vehicle.id=parseInt(sessionStorage.getItem('vehicleId'));
+   this.service.addPolicy(this.policy).subscribe(data =>{
+     alert(JSON.stringify(data));
+   })
   }
 
 
@@ -32,7 +34,6 @@ export class Policy{
   type: String;
   public period: String;
   startDate: String;
-  endDate: String;
   customer: Customer= new Customer();
   vehicle: Vehicle= new Vehicle();
   depreciationDto: DepreciationDto= new DepreciationDto();
