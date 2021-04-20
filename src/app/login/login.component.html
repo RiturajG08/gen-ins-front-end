@@ -1,7 +1,33 @@
 <div class="center-div">
     <form class="frm" (ngSubmit)="loginCheck()">
-        <input type="email" name ="email" placeholder="Enter Your Email" [(ngModel)]="login.email" />
-        <input type="password" name="password" placeholder="Enter Your Password" [(ngModel)]="login.password" />
+       
+     <div>
+        <input type="email" required 
+        placeholder="Enter your email id" 
+        name="email" 
+        [(ngModel)] = "login.email"
+        #email = "ngModel"/><br>
+      </div> 
+  
+      <div *ngIf="email.invalid && (email.dirty||email.touched)">
+        <div class="alert alert-danger" *ngIf="email.errors.required">
+          Email Id is required
+         </div>
+      </div>
+  
+      <div>
+        <input type="password" required 
+        placeholder="Enter your password" 
+        name="password" 
+        [(ngModel)] = "login.password"
+        #password = "ngModel"/><br>
+      </div> 
+  
+      <div *ngIf="password.invalid && (password.dirty||password.touched)">
+        <div class="alert alert-danger" *ngIf="password.errors.required">
+          Password is required
+         </div>
+      </div>
         <button type="submit" class="btn btn-success">Login</button>
         <button type="submit" class="btn btn-progress">Forgot Password</button>
         <p>New To LTI Insurance?
