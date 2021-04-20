@@ -1,7 +1,10 @@
 <!--<p>buy-insurance works!</p>-->
 <!--<p>buy works!</p>-->
+<div>
+  {{ depreciationDto.id }} {{vehicleId}}
+</div>
 <div class="center-div">
-    <form class="frm" (ngSubmit)="registerVehicle()">
+    <form class="frm" (ngSubmit)="registerVehicle(); addDepreciation();">
     <label>Choose a Vehicle:</label>
     <select name="cars type" id="selection" required [(ngModel)]= vehicle.type>
     <option value="2 Wheeler">2 Wheeler</option>
