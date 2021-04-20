@@ -33,6 +33,7 @@ export class BuyInsuranceComponent implements OnInit {
     this.depreciationDto.id=parseInt(sessionStorage.getItem('vehicleId'));
     this.service.addDepreciation(this.depreciationDto).subscribe(response =>{
        alert(JSON.stringify(response));
+       
        this.DepreciationId= response['depreciationId'];
        sessionStorage.setItem('DepreciationId', this.DepreciationId);
     })
