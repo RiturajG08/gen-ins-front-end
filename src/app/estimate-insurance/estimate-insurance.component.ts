@@ -36,5 +36,4 @@ export class EstimateInsuranceComponent  {
       this.premium=this.idv*4/100;
     }
   }
-  
 }
