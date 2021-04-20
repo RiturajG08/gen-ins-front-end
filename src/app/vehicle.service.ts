@@ -19,5 +19,6 @@ export class VehicleService {
   addDepreciation(depreciationDto : DepreciationDto): Observable<object>{
     let url= "http://localhost:8484/depreciation";
     return this.http.post(url, depreciationDto);
+    
   }  
 }
