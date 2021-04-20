@@ -11,6 +11,7 @@ import { VehicleService } from '../vehicle.service';
 export class BuyInsuranceComponent implements OnInit {
 
   vehicle:  Vehicle= new Vehicle();
+  depreciationDto: DepreciationDto= new DepreciationDto();
   vehicleId: string;
   constructor(private service: VehicleService, private router: Router) { }
 
@@ -19,10 +20,17 @@ export class BuyInsuranceComponent implements OnInit {
 
   registerVehicle(){
     this.vehicle.customer.id= parseInt(sessionStorage.getItem('customerId'));
-    this.service.register(this.vehicle).subscribe(data =>{
+    this.service.addVehicle(this.vehicle).subscribe(data =>{
       alert(JSON.stringify(data));
       this.vehicleId= data['registerVihicleId'];
-      sessionStorage.setItem('vehicleId', this.vehicleId);
+      sessionStorage.setItem('vehicleId', this.vehicleId); 
+    })
+  }
+
+  addDepreciation(){
+    this.depreciationDto.id=parseInt(sessionStorage.getItem('vehicleId'));
+    this.service.addDepreciation(this.depreciationDto).subscribe(response =>{
+       alert(JSON.stringify(response));
     })
   }
 }
@@ -39,4 +47,8 @@ export class Vehicle{
  model: String;
  manufacturer: String;
  customer: Customer= new Customer();
+}
+
+export class DepreciationDto{
+  id: number;
 }
