@@ -25,6 +25,7 @@ export class BuyInsuranceComponent implements OnInit {
       this.vehicleId= data['registerVihicleId'];
       sessionStorage.setItem('vehicleId', this.vehicleId); 
     })
+    this.router.navigateByUrl('/policy');
   }
 
   addDepreciation(){
