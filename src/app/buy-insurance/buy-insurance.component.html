@@ -10,15 +10,112 @@
     <option value="2 Wheeler">2 Wheeler</option>
     <option value="4 Wheeler">4 Wheeler</option>
     </select>
-      <input type="text"  name ="number" placeholder="Enter Vehicle Numbers" required  [(ngModel)]= vehicle.number/><br/>
-      <input type="number" name = "price" placeholder="Enter Vehicle Price" required [(ngModel)]= vehicle.price/><br/>
-      <label>Enter Registration Date:</label>
-      <input type="date"  name = "registrationDate" placeholder="Enter Vehicle Registration date" required [(ngModel)]= vehicle.registrationDate /><br/>
-      <input type="text"  name ="engineNumber" placeholder="Enter Vehicle Engine No." required [(ngModel)]= vehicle.engineNumber /><br/>
-      <input type="text" name = " drivingLicense" placeholder="Enter Vehicle Driving License" required [(ngModel)]=vehicle.drivingLicense /><br/>
-      <input type="text" name ="chassisNumber " placeholder="Enter Vehicle Chassis Number" required [(ngModel)]=vehicle.chassisNumber /><br/>
-      <input type="text" name = " model" placeholder="Enter Vehicle Model" required [(ngModel)]=vehicle.model /><br/>
-      <input type="text" name =" manufacturer" placeholder="Enter Vehicle Manufacturer" required  [(ngModel)]=vehicle.manufacturer/><br/>
+
+    <div>
+      <input type="text" required 
+      placeholder="Enter your Vehicle Number" 
+      name="number" 
+      [(ngModel)] = "vehicle.number"
+      #number = "ngModel"/><br>
+    </div>
+    <div *ngIf="number.invalid && (number.dirty||number.touched)">
+      <div class="alert alert-danger" *ngIf="number.errors.required">
+        Vehicle Number is required
+       </div>
+    </div>
+
+    <div>
+      <input type="number" required 
+      placeholder="Enter your Vehicle Price" 
+      name="price" 
+      [(ngModel)] = "vehicle.price"
+      #price = "ngModel"/><br>
+    </div> 
+
+    <div *ngIf="price.invalid && (price.dirty||price.touched)">
+      <div class="alert alert-danger" *ngIf="price.errors.required">
+        Vehicle Price is required
+       </div>
+    </div>
+ 
+    <div>
+        <label>Enter Registration Date:</label>
+        <input type="date" required 
+        placeholder="Enter registration Date" 
+        name="registrationDate" 
+        [(ngModel)] = "vehicle.registrationDate"
+        #registrationDate = "ngModel"/><br>
+      </div> 
+     <div *ngIf="registrationDate.invalid && (registrationDate.dirty||registrationDate.touched)">
+        <div class="alert alert-danger" *ngIf="registrationDate.errors.required">
+          Registration Date is required
+         </div>
+      </div>
+
+      <div>
+        <input type="text" required 
+        placeholder="Enter Vehicle Engine No." 
+        name="engineNumber" 
+        [(ngModel)] = "vehicle.engineNumber"
+        #engineNumber = "ngModel"/><br>
+      </div> 
+      <div *ngIf="engineNumber.invalid && (engineNumber.dirty||engineNumber.touched)">
+        <div class="alert alert-danger" *ngIf="engineNumber.errors.required">
+         Vehicle Engine Number is required
+         </div>
+      </div>
+     
+      <div>
+        <input type="text" required 
+        placeholder="Enter Vehicle Driving License" 
+        name="drivingLicense" 
+        [(ngModel)] = "vehicle.drivingLicense"
+        #drivingLicense = "ngModel"/><br>
+      </div> 
+      <div *ngIf="drivingLicense.invalid && (drivingLicense.dirty||drivingLicense.touched)">
+        <div class="alert alert-danger" *ngIf="drivingLicense.errors.required">
+          Vehicle Driving License is required
+         </div>
+      </div>
+     
+      <div>
+        <input type="text" required 
+        placeholder="Enter Vehicle Chassis Number" 
+        name="chassisNumber" 
+        [(ngModel)] = "vehicle.chassisNumber"
+        #chassisNumber = "ngModel"/><br>
+      </div> 
+      <div *ngIf="chassisNumber.invalid && (chassisNumber.dirty||chassisNumber.touched)">
+        <div class="alert alert-danger" *ngIf="chassisNumber.errors.required">
+         Vehicle Chasis Number is required
+         </div>
+      </div>
+
+      <div>
+        <input type="text" required 
+        placeholder="Enter Vehicle Model" 
+        name="model" 
+        [(ngModel)] = "vehicle.model"
+        #model = "ngModel"/><br>
+      </div> 
+      <div *ngIf="model.invalid && (model.dirty||model.touched)">
+        <div class="alert alert-danger" *ngIf="model.errors.required">
+          Vehicle Model is required
+         </div>
+      </div>
+     
+      <div>
+        <input type="text" required 
+        placeholder="Enter Vehicle Manufacturer" 
+        name="manufacturer" 
+        [(ngModel)] = "vehicle.manufacturer"
+        #manufacturer = "ngModel"/><br>
+      </div> 
+      <div *ngIf="manufacturer.invalid && (manufacturer.dirty||manufacturer.touched)">
+        <div class="alert alert-danger" *ngIf="manufacturer.errors.required">
+          Vehicle Manufacturer is required
+         </div>
+      </div>
       <button type="submit" class="btn btn-success">Submit</button>
   </form>
   </div>

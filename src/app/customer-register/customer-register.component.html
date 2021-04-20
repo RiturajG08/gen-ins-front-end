@@ -1,16 +1,131 @@
 
 <div class="center-div">
     <form class="frm" (ngSubmit)="registerCustomer()">
-      <input type="text" name="name" placeholder="Enter Your Name" required [(ngModel)]= customer.name /><br/>
-      <input type="email" name="email" placeholder="Enter Your Email-id" required [(ngModel)]= customer.email /><br/>
-      <input type="password" name="password" placeholder="Enter Your Password" required [(ngModel)]= customer.password /><br/>
-      <label>Enter Your Date of Birth:</label>
-      <input type="date" name="dob" placeholder="" required [(ngModel)]= customer.dateOfBirth /><br/>
-      <input type="text" name="address" placeholder="Enter Your Address" required [(ngModel)]= customer.address /><br/>
-      <input type="text" name="city" placeholder="Enter Your City" required [(ngModel)]= customer.city /><br/>
-      <input type="text" name="state" placeholder="Enter Your State" required [(ngModel)]= customer.state /><br/>
-      <input type="number" name="pincode" placeholder="Enter Your Pincode" required [(ngModel)]= customer.pincode /><br/>
-      <input type="number" name="mobile" placeholder="Enter Your Mobile Number" required [(ngModel)]= customer.mobileNumber /><br/>
+      <div>
+        <label>Enter Your Name:</label> <br>
+        <input type="text" required 
+        placeholder="Enter your name" 
+        name="name" [(ngModel)] = "customer.name" 
+        #name ="ngModel"/><br>
+     </div>
+    
+     <div *ngIf="name.invalid && (name.dirty||name.touched)">
+       <div class="alert alert-danger" *ngIf="name.errors.required">
+            Name is required
+        </div>
+     </div>
+
+     <div>
+      <input type="email" required 
+      placeholder="Enter your email id" 
+      name="email" 
+      [(ngModel)] = "customer.email"
+      #email = "ngModel"/><br>
+    </div> 
+
+    <div *ngIf="email.invalid && (email.dirty||email.touched)">
+      <div class="alert alert-danger" *ngIf="email.errors.required">
+        Email Id is required
+       </div>
+    </div>
+
+    <div>
+      <input type="password" required 
+      placeholder="Enter your password" 
+      name="password" 
+      [(ngModel)] = "customer.password"
+      #password = "ngModel"/><br>
+    </div> 
+
+    <div *ngIf="password.invalid && (password.dirty||password.touched)">
+      <div class="alert alert-danger" *ngIf="password.errors.required">
+        Password is required
+       </div>
+    </div>
+
+      
+      <div>
+        <label>Enter Your Date of Birth:</label>
+        <input type="date" required 
+        placeholder="Enter your date of birth" 
+        name="dateOfBirth" 
+        [(ngModel)] = "customer.dateOfBirth"
+        #dateOfBirth = "ngModel"/><br>
+      </div> 
+  
+      <div *ngIf="dateOfBirth .invalid && (dateOfBirth .dirty||dateOfBirth .touched)">
+        <div class="alert alert-danger" *ngIf="dateOfBirth .errors.required">
+          Date Of Birth is required
+         </div>
+      </div>
+      
+
+      <div>
+        <input type="text" required 
+        placeholder="Enter Your Address" 
+        name="address" 
+        [(ngModel)] = "customer.address"
+        #address = "ngModel"/><br>
+      </div> 
+  
+      <div *ngIf="address.invalid && (address .dirty||address .touched)">
+        <div class="alert alert-danger" *ngIf="address .errors.required">
+          Address is required
+         </div>
+      </div>
+      <div>
+        <input type="text" required 
+        placeholder="Enter Your City" 
+        name="city" 
+        [(ngModel)] = "customer.city"
+        #city = "ngModel"/><br>
+      </div> 
+  
+      <div *ngIf="city.invalid && (city .dirty||city.touched)">
+        <div class="alert alert-danger" *ngIf="city.errors.required">
+          City is required
+         </div>
+      </div>
+      <div>
+        <input type="text" required 
+        placeholder="Enter Your State" 
+        name="state" 
+        [(ngModel)] = "customer.state"
+        #state= "ngModel"/><br>
+      </div> 
+  
+      <div *ngIf="state.invalid && (state.dirty||state.touched)">
+        <div class="alert alert-danger" *ngIf="state.errors.required">
+          State is required
+         </div>
+      </div>
+      <div>
+        <input type="number" required 
+        placeholder="Enter Your Pincode" 
+        name="pincode" 
+        [(ngModel)] = "customer.pincode"
+        #pincode= "ngModel"/><br>
+      </div> 
+  
+      <div *ngIf="pincode.invalid && (pincode.dirty||pincode.touched)">
+        <div class="alert alert-danger" *ngIf="pincode.errors.required">
+          Pincode is required
+         </div>
+      </div>
+      <div> 
+        
+        <input type="number" required 
+        placeholder="Enter Your Mobile Number." 
+        name="mobileNumber" 
+        [(ngModel)] = "customer.mobileNumber"
+        #mobileNumber = "ngModel"/><br>
+      </div>  
+
+      <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty||mobileNumber.touched)">
+        <div class="alert alert-danger" *ngIf="mobileNumber.errors.required">
+          Mobile Number is required
+         </div>
+      </div>
       <!--<input type="text" placeholder="Confirm Password" required /><br/>-->
       <button type="submit" class="btn btn-success">Submit</button>
   </form>
