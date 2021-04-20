@@ -13,6 +13,7 @@ export class BuyInsuranceComponent implements OnInit {
   vehicle:  Vehicle= new Vehicle();
   depreciationDto: DepreciationDto= new DepreciationDto();
   vehicleId: string;
+  DepreciationId: string;
   constructor(private service: VehicleService, private router: Router) { }
 
   ngOnInit(): void {
@@ -32,6 +33,8 @@ export class BuyInsuranceComponent implements OnInit {
     this.depreciationDto.id=parseInt(sessionStorage.getItem('vehicleId'));
     this.service.addDepreciation(this.depreciationDto).subscribe(response =>{
        alert(JSON.stringify(response));
+       this.DepreciationId= response['depreciationId'];
+       sessionStorage.setItem('DepreciationId', this.DepreciationId);
     })
   }
 }
