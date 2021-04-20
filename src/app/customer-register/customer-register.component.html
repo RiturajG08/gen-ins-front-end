@@ -53,7 +53,7 @@
         #dateOfBirth = "ngModel"/><br>
       </div> 
   
-      <div *ngIf="dateOfBirth .invalid && (dateOfBirth .dirty||dateOfBirth .touched)">
+      <div *ngIf="dateOfBirth .invalid && (dateOfBirth.dirty||dateOfBirth .touched)">
         <div class="alert alert-danger" *ngIf="dateOfBirth .errors.required">
           Date Of Birth is required
          </div>
@@ -68,7 +68,7 @@
         #address = "ngModel"/><br>
       </div> 
   
-      <div *ngIf="address.invalid && (address .dirty||address .touched)">
+      <div *ngIf="address.invalid && (address.dirty||address .touched)">
         <div class="alert alert-danger" *ngIf="address .errors.required">
           Address is required
          </div>
@@ -81,7 +81,7 @@
         #city = "ngModel"/><br>
       </div> 
   
-      <div *ngIf="city.invalid && (city .dirty||city.touched)">
+      <div *ngIf="city.invalid && (city.dirty||city.touched)">
         <div class="alert alert-danger" *ngIf="city.errors.required">
           City is required
          </div>
