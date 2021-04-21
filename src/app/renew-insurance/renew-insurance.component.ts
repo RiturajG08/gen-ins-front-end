@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RenewService } from '../renew.service';
+
 
 @Component({
   selector: 'app-renew-insurance',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RenewInsuranceComponent implements OnInit {
 
-  constructor() { }
+  renew: Renew= new Renew();
+
+  constructor(private service: RenewService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  checkPolicy(){
+    this.service.checkPolicy(this.renew).subscribe(data =>{
+     alert(JSON.stringify(data));
+   })
+  }
+
+}
+
+export class Renew{
+  PolicyNum: number;
 }

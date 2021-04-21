@@ -1,6 +1,6 @@
 <div class="center-div">
-    <form class="frm">
-        <input type="number" placeholder="Enter Policy Number" /> <br/>
+    <form class="frm" (ngSubmit)="checkPolicy()">
+        <input type="number" name ="policyNo" placeholder="Enter Policy Number" required [(ngModel)]= renew.PolicyNum /> <br/>
         <button type="submit" class="btn btn-success">Submit</button>
     </form>
 </div>
