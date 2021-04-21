@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PolicyComponent } from './policy/policy.component';
 import { EstimateInsuranceComponent } from './estimate-insurance/estimate-insurance.component';
+import { PolicyDetailsComponent } from './policy-details/policy-details.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EstimateInsuranceComponent } from './estimate-insurance/estimate-insura
     CustomerRegisterComponent,
     WelcomeComponent,
     PolicyComponent,
-    EstimateInsuranceComponent
+    EstimateInsuranceComponent,
+    PolicyDetailsComponent
   ],
   imports: [
     BrowserModule,
