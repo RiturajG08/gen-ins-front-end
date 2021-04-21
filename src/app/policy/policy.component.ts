@@ -17,8 +17,10 @@ export class PolicyComponent implements OnInit {
   }
 
   addPolicy(){
-  
-   this.service.addPolicy(this.policyDto).subscribe(data =>{
+    this.policyDto.cid= parseInt(sessionStorage.getItem('customerId'));
+    this.policyDto.vid= parseInt(sessionStorage.getItem('vehicleId'));
+    this.policyDto.did= parseInt(sessionStorage.getItem('DepreciationId'));
+    this.service.addPolicy(this.policyDto).subscribe(data =>{
      alert(JSON.stringify(data));
    })
   }
@@ -30,4 +32,7 @@ export class PolicyDto{
   type: String;
   period: String;
   startDate: String;
+  did: number;
+  vid: number;
+  cid: number;
 }
