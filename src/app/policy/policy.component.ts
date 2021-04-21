@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DepreciationDto, Vehicle } from '../buy-insurance/buy-insurance.component';
-import { Customer } from '../customer-register/customer-register.component';
 import { PolicyService } from '../policy.service';
 
 @Component({
@@ -11,7 +9,7 @@ import { PolicyService } from '../policy.service';
 })
 export class PolicyComponent implements OnInit {
 
-  policy: Policy= new Policy();
+  policyDto: PolicyDto= new PolicyDto();
   
   constructor(private router: Router, private service: PolicyService) { }
 
@@ -19,9 +17,8 @@ export class PolicyComponent implements OnInit {
   }
 
   addPolicy(){
-   this.policy.customer.id=parseInt(sessionStorage.getItem('customerId'));
-   this.policy.vehicle.id=parseInt(sessionStorage.getItem('vehicleId'));
-   this.service.addPolicy(this.policy).subscribe(data =>{
+  
+   this.service.addPolicy(this.policyDto).subscribe(data =>{
      alert(JSON.stringify(data));
    })
   }
@@ -29,12 +26,8 @@ export class PolicyComponent implements OnInit {
 
 }
 
-export class Policy{
-  public id: number;
+export class PolicyDto{
   type: String;
-  public period: String;
+  period: String;
   startDate: String;
-  customer: Customer= new Customer();
-  vehicle: Vehicle= new Vehicle();
-  depreciationDto: DepreciationDto= new DepreciationDto();
 }

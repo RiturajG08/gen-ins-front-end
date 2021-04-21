@@ -1,17 +1,17 @@
 <form class="frm" (ngSubmit)="addPolicy()">
     <label>Choose a Policy Type:</label>
-    <select name="Policy type" id="selection" required [(ngModel)]= policy.type>
+    <select name="Policy type" id="selection" required [(ngModel)]= policyDto.type>
     <option value="3rd Party">Third Party</option>
     <option value="comp">Comprehensive</option>
     </select>
 
     <label>Start Date Of Policy:</label>
-    <input type="date"  name = "policyRegistrationDate" placeholder="Enter Vehicle  Policy Registration date" required [(ngModel)]= policy.startDate /><br/>
+    <input type="date"  name = "policyRegistrationDate" placeholder="Enter Vehicle  Policy Registration date" required [(ngModel)]= policyDto.startDate /><br/>
     <label>Choose a Policy Year:</label>
-    <select name="period" id="selection" required [(ngModel)]= policy.period>
+    <select name="period" id="selection" required [(ngModel)]= policyDto.period>
     <option value="One Year">One Year</option>
     <option value="Three Year">Three Year</option>
     <option value="Five Year">Five Year</option>
     </select>
-    <button type="submit" class="btn btn-success">Payment</button>
+    <button type="submit" class="btn btn-success">Buy Policy</button>
 </form>
