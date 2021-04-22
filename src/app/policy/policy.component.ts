@@ -10,6 +10,7 @@ import { PolicyService } from '../policy.service';
 export class PolicyComponent implements OnInit {
 
   policyDto: PolicyDto= new PolicyDto();
+  policyId: string;
   
   constructor(private router: Router, private service: PolicyService) { }
 
@@ -22,6 +23,10 @@ export class PolicyComponent implements OnInit {
     this.policyDto.did= parseInt(sessionStorage.getItem('DepreciationId'));
     this.service.addPolicy(this.policyDto).subscribe(data =>{
      alert(JSON.stringify(data));
+     this.policyId = data['policyId'];
+     sessionStorage.setItem('policyId',this.policyId);
+     this.router.navigate(['policy-details']);
+     
    })
   }
 
