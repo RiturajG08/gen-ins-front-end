@@ -10,7 +10,7 @@ import { RenewService } from '../renew.service';
 })
 export class RenewInsuranceComponent implements OnInit {
 
-  renew: Renew= new Renew();
+  renewal: Renewal= new Renewal();
 
   constructor(private service: RenewService, private router: Router) { }
 
@@ -18,13 +18,13 @@ export class RenewInsuranceComponent implements OnInit {
   }
 
   checkPolicy(){
-    this.service.checkPolicy(this.renew).subscribe(data =>{
+    this.service.checkPolicy(this.renewal).subscribe(data =>{
      alert(JSON.stringify(data));
    })
   }
 
 }
 
-export class Renew{
+export class Renewal{
   PolicyNum: number;
 }
