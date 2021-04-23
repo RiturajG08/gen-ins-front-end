@@ -1,0 +1,28 @@
+<form class="frm" (ngSubmit)="addRenewPolicy()">
+ 
+    <div>
+        <input type="text" required 
+        placeholder="Enter your Vehicle Number" 
+        name="number" 
+        [(ngModel)] = "renewalBuyPolicy.number"
+        #number = "ngModel"/><br>
+      </div>
+      <div *ngIf="number.invalid && (number.dirty||number.touched)">
+        <div class="alert alert-danger" *ngIf="number.errors.required">
+          Vehicle Number is required
+         </div>
+      </div>
+
+    <label>Choose a Policy Type:</label>
+    <select name="Policy type" id="selection" required [(ngModel)]= renewalBuyPolicy.type>
+    <option value="Third Party">Third Party</option>
+    <option value="Comprehensive">Comprehensive</option>
+    </select>
+    <label>Choose a Policy Year:</label>
+    <select name="period" id="selection" required [(ngModel)]= renewalBuyPolicy.period>
+    <option value="One Year">One Year</option>
+    <option value="Three Year">Three Year</option>
+    <option value="Five Year">Five Year</option>
+    </select>
+    <button type="submit" class="btn btn-success">Renew Policy</button>
+</form>

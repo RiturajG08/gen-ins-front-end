@@ -13,6 +13,7 @@ import {​​​​​ LoginComponent }​​​​​ from'./login/login.compo
 import { PolicyDetailsComponent } from './policy-details/policy-details.component';
 import { PolicyComponent } from './policy/policy.component';
 import {​​​​​ RenewInsuranceComponent }​​​​​ from'./renew-insurance/renew-insurance.component';
+import {​​​​​ RenewPolicyDetailsComponent }​​​​​ from'./renew-policy-details/renew-policy-details.component';
 
 const routes: Routes = [
   {​​​​​path:'', component:HomeComponent}​​​​​,
@@ -27,7 +28,8 @@ const routes: Routes = [
   {​​​​​path:'customer-register', component:CustomerRegisterComponent},​​​​​
   {path:'policy', component:PolicyComponent},
   {path:'estimate-insurance', component:EstimateInsuranceComponent},
-  {path:'policy-details',component:PolicyDetailsComponent}
+  {path:'policy-details',component:PolicyDetailsComponent},
+  {path:'renew-policy-details',component:RenewPolicyDetailsComponent}
 
 ];
 

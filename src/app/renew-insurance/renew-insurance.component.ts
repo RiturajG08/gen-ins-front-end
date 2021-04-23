@@ -19,6 +19,7 @@ export class RenewInsuranceComponent implements OnInit {
 
   checkPolicy(){
     this.service.checkPolicy(this.renewal).subscribe(data =>{
+
      alert(JSON.stringify(data));
    })
   }
@@ -26,5 +27,5 @@ export class RenewInsuranceComponent implements OnInit {
 }
 
 export class Renewal{
-  PolicyNum: number;
+  id: number;
 }
