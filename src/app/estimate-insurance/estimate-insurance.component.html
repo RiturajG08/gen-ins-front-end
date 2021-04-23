@@ -9,6 +9,6 @@
       <input type="number" name = "price" placeholder="Enter Vehicle Price" required [(ngModel)]=price/><br/>
       <input type="number" name = "age" placeholder="Enter Vehicle Age" required [(ngModel)]= age/><br/>
       <button type="submit" class="btn btn-success" >Submit</button>
-      <div> your vehicle {{vmodel}} has cantain idv value {{idv}} and premium value {{premium}}</div>
+      <div *ngIf="price"> your vehicle {{vmodel}} has cantain idv value {{idv}} and premium value {{premium}}</div>
   </form>
   </div>
