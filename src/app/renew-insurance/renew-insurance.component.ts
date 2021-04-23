@@ -11,7 +11,7 @@ import { RenewService } from '../renew.service';
 export class RenewInsuranceComponent implements OnInit {
 
   renewal: Renewal= new Renewal();
-
+  policyId: string;
   constructor(private service: RenewService, private router: Router) { }
 
   ngOnInit(): void {
@@ -19,8 +19,12 @@ export class RenewInsuranceComponent implements OnInit {
 
   checkPolicy(){
     this.service.checkPolicy(this.renewal).subscribe(data =>{
-
      alert(JSON.stringify(data));
+     this.policyId = data['policyId'];
+     sessionStorage.setItem('policyId',this.policyId);
+     if(data['status']== true){
+      this.router.navigate(['renew-policy-details']);
+     }
    })
   }
 
