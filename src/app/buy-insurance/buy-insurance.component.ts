@@ -29,7 +29,7 @@ export class BuyInsuranceComponent implements OnInit {
     this.router.navigateByUrl('/policy');
   }
 
-  addDepreciation(){
+  /*addDepreciation(){
     this.depreciationDto.id=parseInt(sessionStorage.getItem('vehicleId'));
     this.service.addDepreciation(this.depreciationDto).subscribe(response =>{
        alert(JSON.stringify(response));
@@ -37,7 +37,7 @@ export class BuyInsuranceComponent implements OnInit {
        this.DepreciationId= response['depreciationId'];
        sessionStorage.setItem('DepreciationId', this.DepreciationId);
     })
-  }
+  }*/
 }
 
 export class Vehicle{
