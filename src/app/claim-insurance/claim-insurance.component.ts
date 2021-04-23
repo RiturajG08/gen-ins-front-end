@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ClaimService } from '../claim.service';
 
 @Component({
   selector: 'claim-insurance',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClaimInsuranceComponent implements OnInit {
 
-  constructor() { }
+  claimDto: ClaimDto = new ClaimDto();
+  
+
+  constructor(private claimService: ClaimService ,private router: Router) { }
 
   ngOnInit(): void {
   }
+    addClaim(){
+      this.claimService.addClaim(this.claimDto).subscribe(data=>{
+        alert(JSON.stringify(data));
+      })
+    }
+}
 
+export class ClaimDto{
+  pid: number;
+  reason: String;
 }

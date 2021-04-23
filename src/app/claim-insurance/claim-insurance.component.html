@@ -1,14 +1,13 @@
 <div class="center-div">
-    <form  class="frm">
-        <input type="number" placeholder="Enter Policy Number" required/><br/>
-        <label>Date of Loss:</label>
-        <input type="date" placeholder="Enter Date of Loss" /><br/>
-        <select name="Claim Reason" id="selection" required>
-            <option value="nd">Natural Disaster </option>
-            <option value="mmd">Man-Made Disaster </option>
-            <option value="rd">Road Accident </option>
-            <option value="th">Theft </option>
+    <form  class="frm" (ngSubmit)="addClaim()">
+        <input type="number" name="policyid" placeholder="Enter Policy Number" [(ngModel)]=claimDto.pid required/><br/>
+        <label>Select the reason for claim</label>
+        <select name="Claim Reason" id="selection" required [(ngModel)]=claimDto.reason>
+            <option value="Natural Disaster">Natural Disaster </option>
+            <option value="Man-Made Disaster ">Man-Made Disaster </option>
+            <option value="Road Accident">Road Accident </option>
+            <option value="Theft">Theft </option>
         </select><br/>
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success">Claim</button>
     </form>
 </div>
