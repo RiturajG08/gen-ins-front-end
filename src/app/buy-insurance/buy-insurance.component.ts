@@ -11,9 +11,11 @@ import { VehicleService } from '../vehicle.service';
 export class BuyInsuranceComponent implements OnInit {
 
   vehicle:  Vehicle= new Vehicle();
-  depreciationDto: DepreciationDto= new DepreciationDto();
   vehicleId: string;
+  vehicleNumber: string;
   DepreciationId: string;
+  depreciationAmount: string;
+  idv: string;
   constructor(private service: VehicleService, private router: Router) { }
 
   ngOnInit(): void {
@@ -23,21 +25,20 @@ export class BuyInsuranceComponent implements OnInit {
     this.vehicle.customer.id= parseInt(sessionStorage.getItem('customerId'));
     this.service.addVehicle(this.vehicle).subscribe(data =>{
       alert(JSON.stringify(data));
-      this.vehicleId= data['registerVihicleId'];
-      sessionStorage.setItem('vehicleId', this.vehicleId); 
-    })
-    this.router.navigateByUrl('/policy');
-  }
+      this.vehicleId= data['registerVehicleId'];
+      this.vehicleNumber= data['vehicleNumber'];
+      this.DepreciationId= data['did'];
+      this.depreciationAmount= data['depreciationAmount'];
+      this.idv= data['idv'];
 
-  /*addDepreciation(){
-    this.depreciationDto.id=parseInt(sessionStorage.getItem('vehicleId'));
-    this.service.addDepreciation(this.depreciationDto).subscribe(response =>{
-       alert(JSON.stringify(response));
-       
-       this.DepreciationId= response['depreciationId'];
-       sessionStorage.setItem('DepreciationId', this.DepreciationId);
+      sessionStorage.setItem('vehicleId', this.vehicleId); 
+      sessionStorage.setItem('vehicleNumber', this.vehicleNumber); 
+      sessionStorage.setItem('depreciationId', this.DepreciationId);
+      sessionStorage.setItem('depreciationAmount', this.depreciationAmount);
+      sessionStorage.setItem('idv', this.idv);
     })
-  }*/
+    this.router.navigateByUrl('/');
+  }
 }
 
 export class Vehicle{
@@ -52,8 +53,4 @@ export class Vehicle{
  model: String;
  manufacturer: String;
  customer: Customer= new Customer();
-}
-
-export class DepreciationDto{
-  id: number;
 }
