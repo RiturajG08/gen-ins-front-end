@@ -1,9 +1,13 @@
 <!--<p>policy-details works!</p>-->
-<div>
-    Your Policy Number is:{{policyNumber}} <br/>
-    Policy Start Date: {{startDate}}<br/>
-    Policy End Date: {{endDate}}<br/>
-    Idv: {{idv}}<br/>
-    Premium: {{premium}}<br/>
-    Total Idv: {{totalIdv}}<br/>
+<div class="center-div">
+    <form class="frm" (ngSubmit)="moveToPayment()">
+        Vehicle Number: {{ vehicleNumber }} <br />
+        Policy Type: {{ type }}<br /> 
+        Policy Start Date: {{startDate}}<br/>
+        Policy End Date: {{endDate}}<br/>
+        Each Year Idv: {{idv}}<br/>
+        Premium: {{premium}}<br/>
+        Total Idv: {{totalIdv}}<br/>
+        <button class="btn btn-success">Make Payment</button>
+    </form>  
 </div>

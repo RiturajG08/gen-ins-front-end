@@ -11,6 +11,12 @@ export class PolicyComponent implements OnInit {
 
   policyDto: PolicyDto= new PolicyDto();
   policyId: string;
+  eachYearIdv: string;
+  totalIdv: string;
+  premium: string;
+  startDate: string;
+  endDate: string;
+  type:string;
   
   constructor(private router: Router, private service: PolicyService) { }
 
@@ -21,16 +27,24 @@ export class PolicyComponent implements OnInit {
     this.policyDto.cid= parseInt(sessionStorage.getItem('customerId'));
     this.policyDto.vid= parseInt(sessionStorage.getItem('vehicleId'));
     this.policyDto.did= parseInt(sessionStorage.getItem('depreciationId'));
-    this.service.addPolicy(this.policyDto).subscribe(data =>{
-     alert(JSON.stringify(data));
-     this.policyId = data['policyId'];
-     sessionStorage.setItem('policyId',this.policyId);
-     //this.router.navigate(['policy-details']);
-     
-   })
+    this.service.seePolicyDetails(this.policyDto).subscribe(data =>{
+      //alert(JSON.stringify(data));
+      this.eachYearIdv= data['idv'];
+      this.totalIdv= data['totalIdv'];
+      this.premium= data['premium'];
+      this.type= data['type'];
+      this.startDate= data['startDate'];
+      this.endDate= data['endDate'];
+
+      sessionStorage.setItem('policyType', this.type);
+      sessionStorage.setItem('policyEachYearIdv', this.eachYearIdv);
+      sessionStorage.setItem('policyTotalIdv', this.totalIdv);
+      sessionStorage.setItem('policyPremium', this.premium);
+      sessionStorage.setItem('policyStartDate', this.startDate);
+      sessionStorage.setItem('policyEndDate', this.endDate);
+    })
+    this.router.navigateByUrl('policy-details');
   }
-
-
 }
 
 export class PolicyDto{

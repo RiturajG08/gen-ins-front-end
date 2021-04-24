@@ -23,6 +23,7 @@ import { PolicyDetailsComponent } from './policy-details/policy-details.componen
 import { RenewPolicyDetailsComponent } from './renew-policy-details/renew-policy-details.component';
 import { AdminComponent } from './admin/admin.component';
 import { DepreciationComponent } from './depreciation/depreciation.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DepreciationComponent } from './depreciation/depreciation.component';
     PolicyDetailsComponent,
     RenewPolicyDetailsComponent,
     AdminComponent,
-    DepreciationComponent
+    DepreciationComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

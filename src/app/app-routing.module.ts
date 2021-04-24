@@ -12,6 +12,7 @@ import {​​​​​ FaqComponent }​​​​​ from'./faq/faq.component';
 import {​​​​​ HelpComponent }​​​​​ from'./help/help.component';
 import {​​​​​ HomeComponent }​​​​​ from'./home/home.component';
 import {​​​​​ LoginComponent }​​​​​ from'./login/login.component';
+import { PaymentComponent } from './payment/payment.component';
 import { PolicyDetailsComponent } from './policy-details/policy-details.component';
 import { PolicyComponent } from './policy/policy.component';
 import {​​​​​ RenewInsuranceComponent }​​​​​ from'./renew-insurance/renew-insurance.component';
@@ -33,8 +34,8 @@ const routes: Routes = [
   {path:'policy-details',component:PolicyDetailsComponent},
   {path:'renew-policy-details',component:RenewPolicyDetailsComponent},
   {path:'admin',component:AdminComponent},
-  {path:'depreciation', component: DepreciationComponent}
-
+  {path:'depreciation', component: DepreciationComponent},
+  {path:'payment', component: PaymentComponent}
 ];
 
 @NgModule({​​​​​

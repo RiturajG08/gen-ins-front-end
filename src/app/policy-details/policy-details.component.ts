@@ -9,35 +9,29 @@ import { PolicyService } from '../policy.service';
 })
 export class PolicyDetailsComponent implements OnInit {
 
-  policyDetailsDto : PolicyDetailsDto = new PolicyDetailsDto();
-
-  policyNumber:number;
+  type: string;
+  vehicleNumber: string;
   startDate: string;
   endDate: string;
   idv: number;
   premium: number;
   totalIdv :number;
-
-  constructor(private policyService: PolicyService, private router: Router) { }
+  
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.type= sessionStorage.getItem('policyType')
+    this.vehicleNumber= sessionStorage.getItem('vehicleNumber');
+    this.startDate= sessionStorage.getItem('policyStartDate');
+    this.endDate= sessionStorage.getItem('policyEndDate');
+    this.idv= parseInt(sessionStorage.getItem('policyEachYearIdv'));
+    this.totalIdv= parseInt(sessionStorage.getItem('policyTotalIdv'));
+    this.premium= parseInt(sessionStorage.getItem('policyPremium'));
   }
 
-  showPolicyDetails(){
-   this.policyDetailsDto.pid = parseInt(sessionStorage.getItem('policyId'));
-   this.policyService.viewPolicy(this.policyDetailsDto).subscribe(response =>{
-   this.policyNumber = response['policyNumber'];
-   this.startDate = response['startDate'];
-   this.endDate = response['endDate'];
-   this.idv = response['idv'];
-   this.premium = response['premium'];
-   this.totalIdv = response['totalIdv'];
-   }) 
+  moveToPayment(){
+    this.router.navigateByUrl("payment");
   }
 
 }
 
-export class PolicyDetailsDto{
-  pid: number;
-
-}
