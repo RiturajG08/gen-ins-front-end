@@ -1,6 +1,7 @@
 import {​​​​​ NgModule }​​​​​ from'@angular/core';
 import {​​​​​ RouterModule, Routes }​​​​​ from'@angular/router';
 import {​​​​​ AboutUsComponent }​​​​​ from'./about-us/about-us.component';
+import { AdminComponent } from './admin/admin.component';
 import {​​​​​ BuyInsuranceComponent }​​​​​ from'./buy-insurance/buy-insurance.component';
 import {​​​​​ ClaimInsuranceComponent }​​​​​ from'./claim-insurance/claim-insurance.component';
 import {​​​​​ ContactUsComponent }​​​​​ from'./contact-us/contact-us.component';
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:'policy', component:PolicyComponent},
   {path:'estimate-insurance', component:EstimateInsuranceComponent},
   {path:'policy-details',component:PolicyDetailsComponent},
-  {path:'renew-policy-details',component:RenewPolicyDetailsComponent}
+  {path:'renew-policy-details',component:RenewPolicyDetailsComponent},
+  {path:'admin',component:AdminComponent}
 
 ];
 

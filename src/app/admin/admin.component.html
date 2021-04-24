@@ -1,0 +1,33 @@
+<!--<p>admin works!</p>--><div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>List Of All Claims</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Claim Id</th>
+          <th>Claim Date</th>
+          <th>Reason</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of claimData">
+          <td>{{c[0]}}</td>
+          <td>{{c[1]}}</td>
+          <td>{{c[2]}}</td>
+          <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Approve</button>
+              <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div>
+
+<!--<div *ngFor = "let c of claimData">
+
+
+</div>-->

@@ -21,6 +21,7 @@ import { PolicyComponent } from './policy/policy.component';
 import { EstimateInsuranceComponent } from './estimate-insurance/estimate-insurance.component';
 import { PolicyDetailsComponent } from './policy-details/policy-details.component';
 import { RenewPolicyDetailsComponent } from './renew-policy-details/renew-policy-details.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { RenewPolicyDetailsComponent } from './renew-policy-details/renew-policy
     PolicyComponent,
     EstimateInsuranceComponent,
     PolicyDetailsComponent,
-    RenewPolicyDetailsComponent
+    RenewPolicyDetailsComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
