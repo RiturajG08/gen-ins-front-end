@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Claim} from './admin/admin.component';
+import { AdminDto, Claim, RejectClaim} from './admin/admin.component';
 import { ClaimDto } from './claim-insurance/claim-insurance.component';
 
 @Injectable({
@@ -21,9 +21,14 @@ export class ClaimService {
     return this.http.get<Claim>(url);
   }
 
-  approveClaim(id: number, amount: number): Observable<Claim>{
+  approveClaim(adminDto: AdminDto): Observable<object>{
     let url ="http://localhost:8484/approvedClaim";
-    return this.http.get<Claim>(url);
+    return this.http.post(url,adminDto);
+  }
+
+  rejectClaim(rejectClaim: RejectClaim) : Observable<object>{
+    let url ="http://localhost:8484/rejectedClaim";
+    return this.http.post(url,rejectClaim);
   }
   
 }

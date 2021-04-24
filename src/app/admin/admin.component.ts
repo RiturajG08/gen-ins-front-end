@@ -10,6 +10,10 @@ import { ClaimService } from '../claim.service';
 export class AdminComponent implements OnInit {
 
  claim: Claim = new Claim();
+ adminDto: AdminDto= new AdminDto();
+ rcl: RejectClaim= new RejectClaim();
+ claimData: any;
+ cid:number;
  
   constructor(private claimService: ClaimService ,private router: Router) { }
 
@@ -17,8 +21,8 @@ export class AdminComponent implements OnInit {
     this.all();
     
   }
-  claimData: any;
-
+  
+  
   all(){
     this.claimService.viewAllClaims().subscribe(data=>{
       //alert(JSON.stringify(data));
@@ -26,8 +30,14 @@ export class AdminComponent implements OnInit {
     })
   }
 
-  approveClaim(id: number, amount: number){
-    this.claimService.approveClaim(id,amount).subscribe(response=>{
+  approveClaim(){
+    this.claimService.approveClaim(this.adminDto).subscribe(response=>{
+      alert(JSON.stringify(response));
+    })
+  }
+
+  rejectClaim(){
+    this.claimService.rejectClaim(this.rcl).subscribe(response=>{
       alert(JSON.stringify(response));
     })
   }
@@ -38,4 +48,15 @@ export class Claim{
   id:number;
   claimDate: Date;
   reason: String; 
+}
+
+export class AdminDto{
+  cid: number;
+  amount: number;
+}
+
+export class RejectClaim{
+  rcid: number;
+  rejectionReason: String;
+
 }
