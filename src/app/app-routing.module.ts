@@ -6,6 +6,7 @@ import {​​​​​ BuyInsuranceComponent }​​​​​ from'./buy-insura
 import {​​​​​ ClaimInsuranceComponent }​​​​​ from'./claim-insurance/claim-insurance.component';
 import {​​​​​ ContactUsComponent }​​​​​ from'./contact-us/contact-us.component';
 import {​​​​​ CustomerRegisterComponent }​​​​​ from'./customer-register/customer-register.component';
+import { DepreciationComponent } from './depreciation/depreciation.component';
 import { EstimateInsuranceComponent } from './estimate-insurance/estimate-insurance.component';
 import {​​​​​ FaqComponent }​​​​​ from'./faq/faq.component';
 import {​​​​​ HelpComponent }​​​​​ from'./help/help.component';
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path:'estimate-insurance', component:EstimateInsuranceComponent},
   {path:'policy-details',component:PolicyDetailsComponent},
   {path:'renew-policy-details',component:RenewPolicyDetailsComponent},
-  {path:'admin',component:AdminComponent}
+  {path:'admin',component:AdminComponent},
+  {path:'depreciation', component: DepreciationComponent}
 
 ];
 

@@ -20,12 +20,12 @@ export class PolicyComponent implements OnInit {
   addPolicy(){
     this.policyDto.cid= parseInt(sessionStorage.getItem('customerId'));
     this.policyDto.vid= parseInt(sessionStorage.getItem('vehicleId'));
-    this.policyDto.did= parseInt(sessionStorage.getItem('DepreciationId'));
+    this.policyDto.did= parseInt(sessionStorage.getItem('depreciationId'));
     this.service.addPolicy(this.policyDto).subscribe(data =>{
      alert(JSON.stringify(data));
      this.policyId = data['policyId'];
      sessionStorage.setItem('policyId',this.policyId);
-     this.router.navigate(['policy-details']);
+     //this.router.navigate(['policy-details']);
      
    })
   }
