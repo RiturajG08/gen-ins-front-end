@@ -19,8 +19,11 @@ export class ClaimService {
   viewAllClaims(): Observable<Claim>{
     let url ="http://localhost:8484/searchAllClaims";
     return this.http.get<Claim>(url);
+  }
 
-
+  approveClaim(id: number, amount: number): Observable<Claim>{
+    let url ="http://localhost:8484/approvedClaim";
+    return this.http.get<Claim>(url);
   }
   
 }

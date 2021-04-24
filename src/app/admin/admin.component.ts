@@ -23,7 +23,12 @@ export class AdminComponent implements OnInit {
     this.claimService.viewAllClaims().subscribe(data=>{
       //alert(JSON.stringify(data));
       this.claimData = data;
+    })
+  }
 
+  approveClaim(id: number, amount: number){
+    this.claimService.approveClaim(id,amount).subscribe(response=>{
+      alert(JSON.stringify(response));
     })
   }
     

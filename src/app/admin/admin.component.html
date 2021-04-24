@@ -9,7 +9,6 @@
           <th>Claim Id</th>
           <th>Claim Date</th>
           <th>Reason</th>
-          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -17,17 +16,18 @@
           <td>{{c[0]}}</td>
           <td>{{c[1]}}</td>
           <td>{{c[2]}}</td>
-          <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Approve</button>
-              <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Reject</button>
-          </td>
         </tr>
       </tbody>
     </table>
   </div>
-  
 </div>
 
-<!--<div *ngFor = "let c of claimData">
+<form class="frm">
+  <input type="number" name="amount" placeholder="Enter Claim Id"/>
+  <input type="number" name="amount" placeholder="Set Claim Amount"/>
+  <!--<button (click)="approveClaim(id,amount)" class="btn btn-danger">Approve</button>-->
+  <!--<button (click)=")" class="btn btn-info" style="margin-left: 10px">Reject</button>-->
+          
+</form>
 
 
-</div>-->
