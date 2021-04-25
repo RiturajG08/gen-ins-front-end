@@ -17,6 +17,7 @@ export class PolicyComponent implements OnInit {
   startDate: string;
   endDate: string;
   type:string;
+  period: string;
   
   constructor(private router: Router, private service: PolicyService) { }
 
@@ -35,6 +36,7 @@ export class PolicyComponent implements OnInit {
       this.type= data['type'];
       this.startDate= data['startDate'];
       this.endDate= data['endDate'];
+      this.period= data['period'];
 
       sessionStorage.setItem('policyType', this.type);
       sessionStorage.setItem('policyEachYearIdv', this.eachYearIdv);
@@ -42,6 +44,7 @@ export class PolicyComponent implements OnInit {
       sessionStorage.setItem('policyPremium', this.premium);
       sessionStorage.setItem('policyStartDate', this.startDate);
       sessionStorage.setItem('policyEndDate', this.endDate);
+      sessionStorage.setItem('policyPeriod', this.period);
     })
     this.router.navigateByUrl('policy-details');
   }
@@ -50,7 +53,6 @@ export class PolicyComponent implements OnInit {
 export class PolicyDto{
   type: String;
   period: String;
-  startDate: String;
   did: number;
   vid: number;
   cid: number;

@@ -23,8 +23,7 @@ export class PaymentComponent implements OnInit {
     this.policy.vehicle.id= parseInt(sessionStorage.getItem('vehicleId'));
     this.policy.depreciation.id= parseInt(sessionStorage.getItem('depreciationId'));
     this.policy.type= sessionStorage.getItem('policyType');
-    this.policy.startDate= sessionStorage.getItem('policyStartDate');
-    this.policy.endDate= sessionStorage.getItem('policyEndDate');
+    this.policy.period= sessionStorage.getItem('policyPeriod');
     this.policy.premium= parseInt(sessionStorage.getItem('policyPremium'));
     this.policy.eachYearIdv= parseInt(sessionStorage.getItem('policyEachYearIdv'));
     this.policy.totalIdv= parseInt(sessionStorage.getItem('policyTotalIdv'));
@@ -38,8 +37,7 @@ export class PaymentComponent implements OnInit {
 
 export class Policy{
   type: String;
-  startDate: String;
-  endDate: String;
+  period: String;
   premium: number;
   eachYearIdv: number;
   totalIdv: number;
