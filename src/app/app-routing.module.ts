@@ -12,11 +12,13 @@ import {​​​​​ FaqComponent }​​​​​ from'./faq/faq.component';
 import {​​​​​ HelpComponent }​​​​​ from'./help/help.component';
 import {​​​​​ HomeComponent }​​​​​ from'./home/home.component';
 import {​​​​​ LoginComponent }​​​​​ from'./login/login.component';
+import { PaymentForRenewalComponent } from './payment-for-renewal/payment-for-renewal.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PolicyDetailsComponent } from './policy-details/policy-details.component';
 import { PolicyComponent } from './policy/policy.component';
 import {​​​​​ RenewInsuranceComponent }​​​​​ from'./renew-insurance/renew-insurance.component';
 import {​​​​​ RenewPolicyDetailsComponent }​​​​​ from'./renew-policy-details/renew-policy-details.component';
+import { ShowRenewDetailsComponent } from './show-renew-details/show-renew-details.component';
 
 const routes: Routes = [
   {​​​​​path:'', component:HomeComponent}​​​​​,
@@ -35,7 +37,9 @@ const routes: Routes = [
   {path:'renew-policy-details',component:RenewPolicyDetailsComponent},
   {path:'admin',component:AdminComponent},
   {path:'depreciation', component: DepreciationComponent},
-  {path:'payment', component: PaymentComponent}
+  {path:'payment', component: PaymentComponent},
+  {path: 'show-renew-details', component: ShowRenewDetailsComponent},
+  {path: 'payment-for-renewal', component: PaymentForRenewalComponent}
 ];
 
 @NgModule({​​​​​

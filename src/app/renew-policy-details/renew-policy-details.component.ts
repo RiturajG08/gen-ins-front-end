@@ -10,20 +10,46 @@ import { RenewService } from '../renew.service';
 })
 export class RenewPolicyDetailsComponent {
 
+  policyId: string;
+  eachYearIdv: string;
+  totalIdv: string;
+  premium: string;
+  startDate: string;
+  endDate: string;
+  type:string;
+  
+
   renewalBuyPolicy: RenewalBuyPolicy = new RenewalBuyPolicy();
   constructor(private service: RenewService ,private router: Router) { }
 
   renewExistingPolicy(){
+    sessionStorage.setItem('vehiclenumber',this.renewalBuyPolicy.number);
     this.renewalBuyPolicy.pid= parseInt(sessionStorage.getItem('policyId'));
     this.service.renewPolicy(this.renewalBuyPolicy).subscribe(data =>{
       alert(JSON.stringify(data));
+
+      this.eachYearIdv= data['idv'];
+      this.totalIdv= data['totalIdv'];
+      this.premium= data['premium'];
+      this.type= data['type'];
+      this.startDate= data['startDate'];
+      this.endDate= data['endDate'];
+
+      sessionStorage.setItem('policyType', this.type);
+      sessionStorage.setItem('policyEachYearIdv', this.eachYearIdv);
+      sessionStorage.setItem('policyTotalIdv', this.totalIdv);
+      sessionStorage.setItem('policyPremium', this.premium);
+      sessionStorage.setItem('policyStartDate', this.startDate);
+      sessionStorage.setItem('policyEndDate', this.endDate);
+
+      this.router.navigateByUrl('show-renew-details');
     })
   } 
 }
 
 export class RenewalBuyPolicy{
   type: string;
-  number: String;
+  number: string;
   period: String;
   pid: number;
 }

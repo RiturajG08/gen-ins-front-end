@@ -24,6 +24,8 @@ import { RenewPolicyDetailsComponent } from './renew-policy-details/renew-policy
 import { AdminComponent } from './admin/admin.component';
 import { DepreciationComponent } from './depreciation/depreciation.component';
 import { PaymentComponent } from './payment/payment.component';
+import { ShowRenewDetailsComponent } from './show-renew-details/show-renew-details.component';
+import { PaymentForRenewalComponent } from './payment-for-renewal/payment-for-renewal.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { PaymentComponent } from './payment/payment.component';
     RenewPolicyDetailsComponent,
     AdminComponent,
     DepreciationComponent,
-    PaymentComponent
+    PaymentComponent,
+    ShowRenewDetailsComponent,
+    PaymentForRenewalComponent
   ],
   imports: [
     BrowserModule,
