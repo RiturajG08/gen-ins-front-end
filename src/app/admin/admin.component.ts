@@ -48,6 +48,7 @@ export class Claim{
   id:number;
   claimDate: Date;
   reason: String; 
+  status: String;
 }
 
 export class AdminDto{
