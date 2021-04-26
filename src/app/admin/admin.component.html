@@ -28,10 +28,9 @@
   <input type="number" name="amount" placeholder="Enter Claim Id" required [(ngModel)]=adminDto.cid [(ngModel)]=rcl.rcid>
   <input type="number" name="amount" placeholder="Set Claim Amount" required [(ngModel)]=adminDto.amount>
   <input type="text" name="reason" placeholder="Enter rejection reason" required [(ngModel)]=rcl.rejectionReason>
-  <button (click)="approveClaim()" class="btn btn-danger" style="margin-left: 10px">Approve</button>
+  <button (click)="approveClaim()" class="btn btn-success" style="margin-left: 10px">Approve</button>
 
   <button (click)="rejectClaim()" class="btn btn-danger" style="margin-left: 10px">Reject</button>
-  <!--<button (click)=")" class="btn btn-info" style="margin-left: 10px">Reject</button>-->
           
 </form>
 

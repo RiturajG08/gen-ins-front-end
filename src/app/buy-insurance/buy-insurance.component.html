@@ -1,7 +1,7 @@
 <!--<p>buy-insurance works!</p>-->
 <!--<p>buy works!</p>-->
 <div class="center-div">
-    <form class="frm" (ngSubmit)="registerVehicle()">
+    <form  #userForm="ngForm" class="frm" (ngSubmit)="registerVehicle()">
     <label>Choose a Vehicle:</label>
     <select name="cars type" id="selection" required [(ngModel)]= vehicle.type>
     <option value="2 Wheeler">2 Wheeler</option>
@@ -113,7 +113,7 @@
           Vehicle Manufacturer is required
          </div>
       </div>
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit"[disabled]="userForm.invalid" class="btn btn-success">Submit</button>
   </form>
   </div>
 
