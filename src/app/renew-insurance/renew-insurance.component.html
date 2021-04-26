@@ -1,6 +1,6 @@
 <div class="center-div">
-    <form class="frm" (ngSubmit)="checkPolicy()">
+    <form #userForm="ngForm" class="frm" (ngSubmit)="checkPolicy()">
         <input type="number" name ="policyNo" placeholder="Enter Policy Number" required [(ngModel)]= renewal.id/> <br/>
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success" [disabled]="userForm.invalid">Submit</button>
     </form>
 </div>

@@ -19,7 +19,7 @@ export class RenewInsuranceComponent implements OnInit {
 
   checkPolicy(){
     this.service.checkPolicy(this.renewal).subscribe(data =>{
-     alert(JSON.stringify(data));
+     //alert(JSON.stringify(data));
      this.policyId = data['policyId'];
      sessionStorage.setItem('policyId',this.policyId);
      if(data['status']== true){

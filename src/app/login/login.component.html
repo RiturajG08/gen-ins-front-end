@@ -1,5 +1,5 @@
 <div class="center-div">
-    <form class="frm" (ngSubmit)="loginCheck()">
+    <form #userForm="ngForm" class="frm" (ngSubmit)="loginCheck()">
        
      <div>
         <input type="email" required 
@@ -28,7 +28,7 @@
           Password is required
          </div>
       </div>
-        <button type="submit" class="btn btn-success">Login</button>
+        <button type="submit" [disabled]="userForm.invalid" class="btn btn-success">Login</button>
         <button type="submit" class="btn btn-progress">Forgot Password</button>
         <p>New To LTI Insurance?
             <a href="http://localhost:4200/customer-register">Register</a>

@@ -1,6 +1,6 @@
 
 <div class="center-div">
-<form class="frm" (ngSubmit)="renewExistingPolicy()">
+<form #userForm="ngForm" class="frm" (ngSubmit)="renewExistingPolicy()">
  
     <div>
         <input type="text" required 
@@ -26,6 +26,6 @@
     <option value="Three Year">Three Year</option>
     <option value="Five Year">Five Year</option>
     </select>
-    <button type="submit" class="btn btn-success">Renew Policy</button>
+    <button type="submit" class="btn btn-success" [disabled]="userFor.invalid">Renew Policy</button>
 </form>
 </div>

@@ -1,5 +1,5 @@
 <div class="center-div">
-<form class="frm" (ngSubmit)="addPolicy()">
+<form #userForm="ngForm" class="frm" (ngSubmit)="addPolicy()">
     <label>Choose a Policy Type:</label>
     <select name="Policy type" id="selection" required [(ngModel)]= policyDto.type>
     <option value="Third Party">Third Party</option>
@@ -11,6 +11,6 @@
     <option value="Three Year">Three Year</option>
     <option value="Five Year">Five Year</option>
     </select>
-    <button type="submit" class="btn btn-success">Next</button>
+    <button type="submit" class="btn btn-success" [disabled]="userForm.invalid">Next</button>
 </form>
 </div>

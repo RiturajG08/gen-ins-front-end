@@ -1,7 +1,9 @@
 <div class="center-div">
-    <form class="frm" (ngSubmit)="buyRenewalPolicy()">
+    <form #userForm="ngForm" class="frm" (ngSubmit)="buyRenewalPolicy()">
         <input type="text" name="card" placeholder="Enter Your Card Details" required>
-        <button class="btn btn-success">Renwal Policy</button>
+        <input type="date" name="date" placeholder="Enter your card's expiry date" required />
+        <input type="number" name="number" placeholder="Enter Your Cvv" required />
+        <button type="submit" [disabled]="userForm.invalid" class="btn btn-success" >Renwal Policy</button>
     </form>
 </div>
 

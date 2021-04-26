@@ -27,7 +27,7 @@ export class PaymentForRenewalComponent implements OnInit {
   this.service.renewService(this.policy1).subscribe(data=>{
     alert(JSON.stringify(data));
   })
-
+  this.router.navigateByUrl('');
   }
 }
 

@@ -26,8 +26,6 @@ export class RenewPolicyDetailsComponent {
     sessionStorage.setItem('vehiclenumber',this.renewalBuyPolicy.number);
     this.renewalBuyPolicy.pid= parseInt(sessionStorage.getItem('policyId'));
     this.service.renewPolicy(this.renewalBuyPolicy).subscribe(data =>{
-      alert(JSON.stringify(data));
-
       this.eachYearIdv= data['idv'];
       this.totalIdv= data['totalIdv'];
       this.premium= data['premium'];

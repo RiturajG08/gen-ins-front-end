@@ -29,7 +29,6 @@ export class PolicyComponent implements OnInit {
     this.policyDto.vid= parseInt(sessionStorage.getItem('vehicleId'));
     this.policyDto.did= parseInt(sessionStorage.getItem('depreciationId'));
     this.service.seePolicyDetails(this.policyDto).subscribe(data =>{
-      //alert(JSON.stringify(data));
       this.eachYearIdv= data['idv'];
       this.totalIdv= data['totalIdv'];
       this.premium= data['premium'];

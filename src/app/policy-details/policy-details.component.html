@@ -1,14 +1,14 @@
 <!--<p>policy-details works!</p>-->
 <div class="center-div">
     <form class="frm" (ngSubmit)="moveToPayment()">
-        Vehicle Number: {{ vehicleNumber }} <br />
-        Policy Type: {{ type }}<br /> 
-        Policy Period: {{ period }}<br />
-        Policy Start Date: {{startDate}}<br/>
-        Policy End Date: {{endDate}}<br/>
-        Each Year Idv: {{idv}}<br/>
-        Premium: {{premium}}<br/>
-        Total Idv: {{totalIdv}}<br/>
+        <h4>Vehicle Number: {{ vehicleNumber }}<br /> </h4> 
+        <h4>Policy Type: {{ type }}<br />  </h4> 
+        <h4>Policy Period: {{ period }}<br /></h4>
+        <h4>Policy Start Date: {{startDate}}<br/></h4>
+        <h4>Policy End Date: {{endDate}}<br/></h4>
+        <h4>Each Year Idv: Rs.{{idv}}<br/></h4>
+        <h4>Premium: Rs.{{premium}}<br/></h4>
+        <h4>Total Idv: Rs.{{totalIdv}}<br/></h4>
         <button class="btn btn-success">Make Payment</button>
     </form>  
 </div>
