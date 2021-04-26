@@ -1,5 +1,5 @@
 <div class="center-div">
-    <form  class="frm" (ngSubmit)="addClaim()">
+    <form  #userForm="ngForm" class="frm" (ngSubmit)="addClaim()">
         <input type="number" name="policyid" placeholder="Enter Policy Number" [(ngModel)]=claimDto.pid required/><br/>
         <label>Select the reason for claim</label>
         <select name="Claim Reason" id="selection" required [(ngModel)]=claimDto.reason>
@@ -8,6 +8,6 @@
             <option value="Road Accident">Road Accident </option>
             <option value="Theft">Theft </option>
         </select><br/>
-        <button type="submit" class="btn btn-success">Claim</button>
+        <button type="submit" [disabled] = "userForm.invalid" class="btn btn-success">Claim</button>
     </form>
 </div>

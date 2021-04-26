@@ -11,7 +11,6 @@ export class ClaimInsuranceComponent implements OnInit {
 
   claimDto: ClaimDto = new ClaimDto();
   
-
   constructor(private claimService: ClaimService ,private router: Router) { }
 
   ngOnInit(): void {

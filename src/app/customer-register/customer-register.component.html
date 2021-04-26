@@ -1,10 +1,10 @@
 
 <div class="center-div">
-    <form class="frm" (ngSubmit)="registerCustomer()">
+    <form #userForm="ngForm" class="frm" (ngSubmit)="registerCustomer()">
       <div>
         <label>Enter Your Name:</label> <br>
         <input type="text" required 
-        placeholder="Enter your name" 
+        placeholder="Enter Our Name" 
         name="name" [(ngModel)] = "customer.name" 
         #name ="ngModel"/><br>
      </div>
@@ -17,8 +17,8 @@
 
      <div>
       <input type="email" required 
-      placeholder="Enter your email id" 
-      name="email" 
+      placeholder="Enter Your Email id" 
+      name="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" 
       [(ngModel)] = "customer.email"
       #email = "ngModel"/><br>
     </div> 
@@ -31,7 +31,7 @@
 
     <div>
       <input type="password" required 
-      placeholder="Enter your password" 
+      placeholder="Enter Your Password" 
       name="password" 
       [(ngModel)] = "customer.password"
       #password = "ngModel"/><br>
@@ -43,11 +43,10 @@
        </div>
     </div>
 
-      
-      <div>
+    <div>
         <label>Enter Your Date of Birth:</label>
         <input type="date" required 
-        placeholder="Enter your date of birth" 
+        placeholder="Enter Your Date of Birth" 
         name="dateOfBirth" 
         [(ngModel)] = "customer.dateOfBirth"
         #dateOfBirth = "ngModel"/><br>
@@ -68,7 +67,7 @@
         #address = "ngModel"/><br>
       </div> 
   
-      <div *ngIf="address.invalid && (address.dirty||address .touched)">
+      <div *ngIf="address.invalid && (address.dirty||address.touched)">
         <div class="alert alert-danger" *ngIf="address .errors.required">
           Address is required
          </div>
@@ -126,7 +125,7 @@
           Mobile Number is required
          </div>
       </div>
-      <!--<input type="text" placeholder="Confirm Password" required /><br/>-->
-      <button type="submit" class="btn btn-success">Submit</button>
+  
+      <button type="submit" [disabled] = "userForm.invalid" class="btn btn-success">Submit</button>
   </form>
   </div>

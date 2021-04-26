@@ -24,7 +24,6 @@ export class BuyInsuranceComponent implements OnInit {
   registerVehicle(){
     this.vehicle.customer.id= parseInt(sessionStorage.getItem('customerId'));
     this.service.addVehicle(this.vehicle).subscribe(data =>{
-      //alert(JSON.stringify(data));
       this.vehicleId= data['registerVehicleId'];
       this.vehicleNumber= data['vehicleNumber'];
       this.DepreciationId= data['did'];
