@@ -23,9 +23,7 @@ export class PaymentForRenewalComponent implements OnInit {
   this.policy1.eachYearIdv=parseInt(sessionStorage.getItem('policyTotalIdv'));
   this.policy1.type=sessionStorage.getItem('policyType');
   this.policy1.period=sessionStorage.getItem('policyPeriod');
-  this.policy1.startDate= new Date(sessionStorage.getItem('policyStartDate'));
-  this.policy1.enddate=new Date(sessionStorage.getItem('policyEndDate'));
-
+  
   this.service.renewService(this.policy1).subscribe(data=>{
     alert(JSON.stringify(data));
   })
@@ -35,8 +33,6 @@ export class PaymentForRenewalComponent implements OnInit {
 
 export class Policy1{
 id: number;
-startDate: Date= new Date();
-enddate: Date= new Date();
 premium: number;
 eachYearIdv: number;
 totalIdv: number;

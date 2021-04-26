@@ -17,7 +17,7 @@ export class RenewPolicyDetailsComponent {
   startDate: string;
   endDate: string;
   type:string;
-  
+  period: string;
 
   renewalBuyPolicy: RenewalBuyPolicy = new RenewalBuyPolicy();
   constructor(private service: RenewService ,private router: Router) { }
@@ -34,6 +34,7 @@ export class RenewPolicyDetailsComponent {
       this.type= data['type'];
       this.startDate= data['startDate'];
       this.endDate= data['endDate'];
+      this.period= data['period'];
 
       sessionStorage.setItem('policyType', this.type);
       sessionStorage.setItem('policyEachYearIdv', this.eachYearIdv);
@@ -41,6 +42,7 @@ export class RenewPolicyDetailsComponent {
       sessionStorage.setItem('policyPremium', this.premium);
       sessionStorage.setItem('policyStartDate', this.startDate);
       sessionStorage.setItem('policyEndDate', this.endDate);
+      sessionStorage.setItem('policyPeriod', this.period);
 
       this.router.navigateByUrl('show-renew-details');
     })

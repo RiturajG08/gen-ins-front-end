@@ -15,6 +15,7 @@ export class ShowRenewDetailsComponent implements OnInit {
   idv: number;
   premium: number;
   totalIdv :number;
+  period : string;
 
   constructor(private router: Router) { }
 
@@ -26,6 +27,7 @@ export class ShowRenewDetailsComponent implements OnInit {
     this.idv= parseInt(sessionStorage.getItem('policyEachYearIdv'));
     this.totalIdv= parseInt(sessionStorage.getItem('policyTotalIdv'));
     this.premium= parseInt(sessionStorage.getItem('policyPremium'));
+    this.period=sessionStorage.getItem('policyPeriod');
   }
 
   moveToPayment(){
