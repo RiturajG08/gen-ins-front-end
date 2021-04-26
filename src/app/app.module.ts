@@ -26,6 +26,7 @@ import { DepreciationComponent } from './depreciation/depreciation.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ShowRenewDetailsComponent } from './show-renew-details/show-renew-details.component';
 import { PaymentForRenewalComponent } from './payment-for-renewal/payment-for-renewal.component';
+import { UserPolicyComponent } from './user-policy/user-policy.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { PaymentForRenewalComponent } from './payment-for-renewal/payment-for-re
     DepreciationComponent,
     PaymentComponent,
     ShowRenewDetailsComponent,
-    PaymentForRenewalComponent
+    PaymentForRenewalComponent,
+    UserPolicyComponent
   ],
   imports: [
     BrowserModule,

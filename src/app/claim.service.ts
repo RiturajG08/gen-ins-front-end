@@ -30,5 +30,9 @@ export class ClaimService {
     let url ="http://localhost:8484/rejectedClaim";
     return this.http.post(url,rejectClaim);
   }
-  
+ 
+  viewUserClaim(id:number): Observable<object>{
+    let url= "http://localhost:8484/viewuserclaim?id="+id;
+    return this.http.get<Claim>(url);
+  }
 }

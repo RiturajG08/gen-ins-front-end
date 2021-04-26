@@ -19,6 +19,7 @@ import { PolicyComponent } from './policy/policy.component';
 import {​​​​​ RenewInsuranceComponent }​​​​​ from'./renew-insurance/renew-insurance.component';
 import {​​​​​ RenewPolicyDetailsComponent }​​​​​ from'./renew-policy-details/renew-policy-details.component';
 import { ShowRenewDetailsComponent } from './show-renew-details/show-renew-details.component';
+import { UserPolicyComponent } from './user-policy/user-policy.component';
 
 const routes: Routes = [
   {​​​​​path:'', component:HomeComponent}​​​​​,
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path:'depreciation', component: DepreciationComponent},
   {path:'payment', component: PaymentComponent},
   {path: 'show-renew-details', component: ShowRenewDetailsComponent},
-  {path: 'payment-for-renewal', component: PaymentForRenewalComponent}
+  {path: 'payment-for-renewal', component: PaymentForRenewalComponent},
+  {path: 'view-policy', component: UserPolicyComponent}
 ];
 
 @NgModule({​​​​​

@@ -26,4 +26,9 @@ export class PolicyService {
    let url="http://localhost:8484/renewalPayment";
    return this.http.post(url, policy1);
   }
+
+  viewUserPolicy(id:number): Observable<object>{
+    let url= "http://localhost:8484/searchuserpolicy?id="+id;
+    return this.http.get<Policy>(url);
+  }
 }

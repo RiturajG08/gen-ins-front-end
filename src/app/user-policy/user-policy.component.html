@@ -1,0 +1,72 @@
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>List Of Your Policy</h2>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Policy Number</th>
+              <th>Policy Premium</th>
+              <th>Policy Start Date</th>
+              <th>Policy End Date</th>
+              <th>Policy Type</th>
+              <th>Each Year Idv </th>
+              <th>Total Idv</th>
+              <th>Policy Period</th>
+              <th>Vehicle Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of policyData">
+              <td>{{c[0]}}</td>
+              <td>{{c[1]}}</td>
+              <td>{{c[2]}}</td>
+              <td>{{c[3]}}</td>
+              <td>{{c[4]}}</td>
+              <td>{{c[5]}}</td>
+              <td>{{c[6]}}</td>
+              <td>{{c[7]}}</td>
+              <td>{{c[8]}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <input type="number" placeholder="Enter Claim Number" [(ngModel)]="claimNumber"/>
+    <button (click)="viewClaim()">View Status</button>
+
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Claim History</h2>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Claim Id</th>
+              <th>Claim Status</th>
+              <th>Claim Amount</th>
+              <th>Claim Rejection Reason</th>
+              <th>Claim Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of claimData">
+              <td>{{c[0]}}</td>
+              <td>{{c[1]}}</td>
+              <td>{{c[2]}}</td>
+              <td>{{c[3]}}</td>
+              <td>{{c[4]}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+   
+    
+    
+    
